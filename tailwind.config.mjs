@@ -7,11 +7,19 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins","sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        md2: '1500px'
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-animated')
+  ],
 };
