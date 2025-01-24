@@ -10,12 +10,13 @@ const About = ({ref, className}) => {
         <hr className='my-3 border-stone-50/30 w-[80%]'></hr>
         <div className="text-white font-poppins text-sm md2:text-[1rem]">
           <p className="pb-4">
-          I’m a recent Computer Science graduate from the University of Calgary who loves turning ideas into impactful software. 
-          I’ve built scalable systems, optimized performance, and tackled real-world problems—like developing a volumetric live-streaming 
-          system and creating apps with React, TypeScript, and .NET.
+            I’m a Software Engineer and Computer Science graduate from the University of Calgary with a passion for building efficient, 
+            scalable systems and solving complex problems. I’m driven by the challenge of turning ideas into real-world solutions.
+            This website highlights my skills, experience, and the impact of my work, giving employers a clear view of what I bring to the table.
           </p>
           <p>
-          Beyond code, I’m a pilot, music lover, and explorer always looking to learn, grow, and create. Let’s build something cool. 
+            Outside of coding, I’m a pilot, cricket enthusiast, and an explorer who thrives on learning and pushing boundaries in 
+            everything I do. This is a glimpse into my expertise—I’m ready to bring my skills and drive to your team to make a meaningful impact!
           </p>
         </div>
     </div>
