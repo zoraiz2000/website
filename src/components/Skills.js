@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Skills = ({ ref, className }) => {
 
@@ -57,18 +58,20 @@ const Skills = ({ ref, className }) => {
     const contentRef = contentRefs[title];
 
     return (
-      <div className={`${title !== "Languages" ? "mt-6" : ""}`}>
+      <div className={`${title !== "Languages" ? "mt-2" : ""}`}>
         <div
-          className="flex justify-between items-center group text-md md2:text-xl font-poppins font-bold cursor-pointer"
+          className="flex justify-between p-2 rounded-md items-center group text-md md2:text-xl font-poppins font-bold cursor-pointer hover:bg-[rgb(255,255,255,0.1)] transition duraiton-300"
           onClick={() => toggleSection(title)}
         >
           <span>{title}</span>
           <span
-            className={`bg-none group-hover:bg-[rgba(255,255,255,0.1)] rounded-full px-1 transform transition-all ease-in-out duration-300 ${
-              openSections[title] ? "rotate-0" : "-rotate-90"
+            // className={`bg-none group-hover:bg-[rgba(255,255,255,0.1)] rounded-full px-1 transform transition-all ease-in-out duration-300 ${
+            className={`text-4xl group-hover:text-[rgba(255,255,255,2)] rounded-full transform transition-all ease-in-out duration-300 ${
+              openSections[title] ? "rotate-0 text-[rgba(255,255,255,1)]" : "-rotate-90 text-[rgba(255,255,255,0.5)]"
             }`}
           >
-            ▼
+            <IoMdArrowDropdown/>
+            {/* ▼ */}
           </span>
         </div>
         <div
