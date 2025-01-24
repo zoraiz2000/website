@@ -23,7 +23,7 @@ export const Resume = ({ref, className}) => {
             src="/resume.pdf" 
             className="w-full h-5/6 relative"
         />
-        <div className='w-10/12'>
+        <div className='flex w-full mx-auto'>
           <button
             onClick={handleDownload}
             className="flex mx-auto mt-5 py-2 px-6 bg-[rgb(10,102,194)] border border-transparent hover:border-white text-sm text-white font-bold rounded-3xl cursor-pointer transition duration-200"
