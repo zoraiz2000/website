@@ -25,13 +25,12 @@ const Intro = ({className}) => {
         &lt; SOFTWARE ENGINEER /&gt;
         </div>
 
-        <hr className='border-stone-50/30 w-[90%]'></hr>
 
         {/* Education */}
-        <div className="flex flex-col px-4 py-2 gap-2 items-center text-white font-poppins">
+        <div className="flex flex-col mx-4 px-2 py-2 gap-2 items-center text-white bg-[rgb(255,255,255,0.1)] rounded-md font-poppins">
             <div className="flex flex-col text-xs gap-1">
                 
-                <div className="flex flex-row text-md md2:text-[.9rem] md2:leading-[1.3rem] justify-between gap-6">
+                <div className="flex flex-row text-[.73rem] leading-[1.3rem] justify-between gap-6">
                     <div className="flex flex-col">
                         <div>
                             BSc. Computer Science
@@ -51,7 +50,7 @@ const Intro = ({className}) => {
                             (Concentration)
                         </div>
                         <div className="flex flex-row items-center gap-1">
-                            <GiGraduateCap className="text-2xl text-[rgba(0,0,0,0.6)]" />
+                            <GiGraduateCap className="text-xl text-[rgba(0,0,0,0.6)]" />
                             2024
                         </div>
                     </div>
@@ -59,7 +58,6 @@ const Intro = ({className}) => {
             </div>
         </div>
 
-        <hr className='border-stone-50/30 w-[90%]'></hr>
 
         {/* Greetings */}
         {/* <div className="my-4 font-poppins text-center text-white-500 text-xs sm:text-xs md:text-md xl:text-[0.8rem]">
