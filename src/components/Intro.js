@@ -22,17 +22,17 @@ const Intro = ({className}) => {
 
         {/* Occupation */}
         <div className ="font-bold font-poppins text-blue-500 text-md md2:text-lg">
-        &lt; SOFTWARE ENGINEER &gt;
+        &lt; SOFTWARE ENGINEER /&gt;
         </div>
 
         <hr className='border-stone-50/30 w-[90%]'></hr>
 
         {/* Education */}
-        <div className="flex flex-col p-4 gap-2 items-center text-white font-poppins">
+        <div className="flex flex-col px-4 py-2 gap-2 items-center text-white font-poppins">
             <div className="flex flex-col text-xs gap-1">
                 
                 <div className="flex flex-row text-md md2:text-[.9rem] md2:leading-[1.3rem] justify-between gap-6">
-                    <div className="flex flex-col font-bold">
+                    <div className="flex flex-col">
                         <div>
                             BSc. Computer Science
                         </div>
@@ -43,7 +43,7 @@ const Intro = ({className}) => {
                             University of Calgary
                         </div>
                     </div>
-                    <div className="flex flex-col font-bold text-[.73rem]">
+                    <div className="flex flex-col text-[.73rem]">
                         <div>
                             (Major)
                         </div>
@@ -62,12 +62,12 @@ const Intro = ({className}) => {
         <hr className='border-stone-50/30 w-[90%]'></hr>
 
         {/* Greetings */}
-        <div className="my-4 font-poppins text-center text-white-500 text-xs sm:text-xs md:text-md xl:text-[0.8rem]">
+        {/* <div className="my-4 font-poppins text-center text-white-500 text-xs sm:text-xs md:text-md xl:text-[0.8rem]">
         Explore around!
-        </div>
+        </div> */}
                     
         {/* Socials */}
-        <div className="flex flex-row mx-auto mb-2 gap-10">
+        <div className="flex flex-row mx-auto mb-2 mt-4 gap-10">
         <a
             href="https://www.linkedin.com/in/zoraizkhan2000/" 
             target="_blank" 
