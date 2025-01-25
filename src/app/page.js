@@ -1,5 +1,5 @@
 "use client"
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import Intro from '@/components/Intro';
 import Resume from '@/components/Resume';
@@ -12,12 +12,28 @@ import About from '@/components/About';
 
 export default function Home() {
 
-  const CURSOR_CLASS_NAME = 'custom-type-animation-cursor';  
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+
+  // Add Google Analytics script dynamically
+  useEffect(() => {
+    // Add Google Analytics script
+    const script = document.createElement("script");
+    script.src = `https://www.googletagmanager.com/gtag/js?id=G-ZY6Q8EZXPZ`; 
+    script.async = true;
+    document.head.appendChild(script);
+
+    // Initialize Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-ZY6Q8EZXPZ"); 
+  }, []);
 
   return (
     <div className="">
