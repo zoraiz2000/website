@@ -18,8 +18,8 @@ export const Resume = ({ref, className}) => {
         <span className="block text-white">My</span>
         <span className="block text-blue-500">Resume</span>
         </div>
-        <hr className='my-3 border-stone-50/30 w-[73%]'></hr>
-        <embed 
+        <hr className='my-3 border-stone-50/30 w-[73%] bg-white'></hr>
+        <iframe  
             src="/resume.pdf" 
             className="w-full h-5/6 relative"
         />
