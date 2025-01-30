@@ -77,7 +77,7 @@ const Projects = ({ ref, className }) => {
       <div className="font-poppins text-4xl md2:text-6xl">
         <span className="block text-white font-extrabold">Personal</span>
         <span className="block text-blue-500 font-extrabold">Projects</span>
-        <hr className="my-3 border-stone-50/30 w-[73%]" />
+        <hr className="my-3 border-stone-50/30 w-[100%]" />
 
         {projects.slice(0, 1).map(({ title, description, tools, link }, index) => (
           <a

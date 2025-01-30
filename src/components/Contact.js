@@ -58,7 +58,7 @@ const Contact = ({ ref, className }) => {
       <div className="mb-24 font-poppins text-4xl md2:text-6xl">
         <span className="block text-white font-extrabold">Let's</span>
         <span className="block text-blue-500 font-extrabold">Connect</span>
-        <hr className="my-3 border-stone-50/30 w-[90%]"></hr>
+        <hr className="my-3 border-stone-50/30 w-[100%]"></hr>
         <form ref={form} onSubmit={sendEmail} className="relative z-10">
           {/* Flex container for Name and Email side by side */}
           <div className="flex flex-col md:flex-row gap-2 md2:gap-6">

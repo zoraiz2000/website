@@ -7,7 +7,7 @@ const About = ({ref, className}) => {
             <span className="block text-white">About</span>
             <span className="block text-blue-500">Me</span>
         </div>
-        <hr className='my-3 border-stone-50/30 w-[80%]'></hr>
+        <hr className='my-3 border-stone-50/30 w-[100%]'></hr>
         <div className="text-white font-poppins text-sm md2:text-[1rem]">
           <p className="pb-4">
             I’m a Software Engineer and Computer Science graduate from the University of Calgary with a passion for building efficient, 

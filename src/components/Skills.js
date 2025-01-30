@@ -108,7 +108,7 @@ const Skills = ({ ref, className }) => {
         <span className="block text-white">Technical</span>
         <span className="block text-blue-500">Skills</span>
       </div>
-      <hr className="my-3 border-stone-50/30 w-[80%]" />
+      <hr className="my-3 border-stone-50/30 w-[100%]" />
       {renderSkillsCategory("Languages", languages)}
       {renderSkillsCategory("Frameworks", frameworks)}
       {renderSkillsCategory("Developer Tools", tools)}
