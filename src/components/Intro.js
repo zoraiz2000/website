@@ -6,7 +6,7 @@ import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 
 const Intro = ({className}) => {
   return (
-    <div className={`flex flex-col py-4 flex-wrap rounded-2xl items-center justify-between bg-[rgb(53,52,51)] ${className}`}>
+    <div className={`flex flex-col flex-wrap items-center justify-between ${className} border-b border-stone-50/30`}>
        
         {/* Image   */}
         <img 
@@ -71,19 +71,19 @@ const Intro = ({className}) => {
             target="_blank" 
             rel="noopener noreferrer"
         >
-            <FaLinkedin className='w-6 h-6 fill-[rgba(255,255,255,0.5)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
+            <FaLinkedin className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
         </a>
         <a
             href="https://github.com/zoraiz2000" 
             target="_blank" 
             rel="noopener noreferrer"
         >
-            <FaGithub className='w-6 h-6 fill-[rgba(255,255,255,0.5)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
+            <FaGithub className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
         </a>
         <a 
             href="mailto:zoraiz.khan@ucalgary.ca"
         >
-            <PiMicrosoftOutlookLogoFill className='w-6 h-6 fill-[rgba(255,255,255,0.5)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
+            <PiMicrosoftOutlookLogoFill className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
         </a>
         </div>
     </div>
