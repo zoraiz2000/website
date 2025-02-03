@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Website",
+  title: "Zoraiz Khan - Portfolio",
   description: "A portfolio website",
 };
 
