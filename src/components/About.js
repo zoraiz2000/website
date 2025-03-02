@@ -12,11 +12,13 @@ const About = ({ref, className}) => {
           <p className="pb-4">
             I’m a Software Engineer and Computer Science graduate from the University of Calgary with a passion for building efficient, 
             scalable systems and solving complex problems. I’m driven by the challenge of turning ideas into real-world solutions.
-            This website highlights my skills, experience, and the impact of my work, giving employers a clear view of what I bring to the table.
+            This website showcases my skills, experience, and the tangible value I’ve delivered, offering employers a clear perspective 
+            on the expertise and dedication I bring to every project.
           </p>
           <p>
-            Outside of coding, I’m a pilot, cricket enthusiast, and an explorer who thrives on learning and pushing boundaries in 
-            everything I do. This is a glimpse into my expertise—I’m ready to bring my skills and drive to your team to make a meaningful impact!
+            Beyond the world of code, I’m a licensed pilot, an avid cricket enthusiast, and a relentless explorer, constantly seeking 
+            to learn, grow, and push boundaries in all facets of life. This is more than a portfolio—it’s a window into my drive and 
+            capabilities. I’m eager to contribute my technical prowess and unwavering commitment to your team, ready to make a lasting impact!
           </p>
         </div>
     </div>
