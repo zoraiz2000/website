@@ -1,6 +1,38 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { HiExternalLink } from "react-icons/hi";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaDesktop, FaGithub } from "react-icons/fa";
+
+// Project Card
+const ProjectCard = ({ title, description, tools, link, website }) => (
+  <div className='flex flex-col justify-between max-w-[610px] p-4 rounded-xl hover:bg-[rgb(30,30,30)] hover:cursor-pointer'>
+    <div className="flex flex-row items-center justify-between gap-2 text-lg md2:text-xl font-bold">
+      {title}
+      <div className='flex flex-row items-center gap-2'>
+      {link && (
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <HiExternalLink className='text-2xl hover:bg-[rgba(255,255,255,0.1)] p-1.5 box-content rounded-full transition-all duration-200'/>
+        </a>
+      )}
+      {website && (
+        <a href={website} target="_blank" rel="noopener noreferrer">
+          <FaDesktop className='text-lg hover:bg-[rgba(255,255,255,0.1)] p-1.5 box-content rounded-lg transition-all duration-200'/>
+        </a>
+      )}
+      </div>
+      
+    </div>
+    <div className="flex flex-row justify-between">
+      <div className="max-w-[512px]">
+        <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
+          {description}
+        </div>
+        <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
+          {tools}
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 const Projects = ({ ref, className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -9,10 +41,19 @@ const Projects = ({ ref, className }) => {
 
   const projects = [
     {
+      title: "GPTStir",
+      description: `An AI chatbot platform that allows users to interact with multiple AI models, including OpenAI, Anthropic, xAI, and DeepSeek. 
+                    Features OAuth 2.0 authentication for secure sign-in and enables seamless model switching for each query.`,
+      tools: "React (Vite) • Node.js (Express) • PostgreSQL (AWS RDS) • OAuth 2.0 • OpenAI API • Anthropic API • xAI API • DeepSeek API",
+      website: "https://gptstir.com",
+      link: "https://github.com/zoraiz2000/gptstir-frontend",
+    },    
+    {
       title: "Portfolio Website",
       description: `This website is a sleek and professional space showcasing my skills, projects, and experience. It features a detailed 
                     resume, project highlights, and a comprehensive overview of my technical expertise.`,
       tools: "React • Next.js • Tailwind CSS",
+      website: "https://zoraizkhan.website",
       link: "https://github.com/zoraiz2000/website",
     },
     {
@@ -79,31 +120,8 @@ const Projects = ({ ref, className }) => {
         <span className="block text-blue-500 font-extrabold">Projects</span>
         <hr className="my-3 border-stone-50/30 w-[100%]" />
 
-        {projects.slice(0, 1).map(({ title, description, tools, link }, index) => (
-          <a
-            key={index}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-row justify-between group max-w-[610px] p-4 rounded-xl hover:bg-[rgb(30,30,30)] hover:cursor-pointer"
-          >
-            <div className="">
-              <div className="flex flex-row items-center gap-2 text-lg md2:text-xl font-bold">
-                {title}
-                <HiExternalLink className="group-hover:bg-[rgba(255,255,255,0.1)] p-2 box-content rounded-full transition-all duration-200" />
-              </div>
-              <div className="flex flex-row justify-between">
-                <div className="max-w-[512px]">
-                  <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
-                    {description}
-                  </div>
-                  <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
-                    {tools}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
+        {projects.slice(0, 1).map((project, index) => (
+          <ProjectCard key={index} {...project} />
         ))}
 
         <div
@@ -113,31 +131,8 @@ const Projects = ({ ref, className }) => {
           }}
           className="overflow-hidden transition-[max-height] duration-1000 ease-in-out"
         >
-          {projects.slice(1).map(({ title, description, tools, link }, index) => (
-            <a
-              key={index}
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex flex-row justify-between group max-w-[610px] p-4 rounded-xl hover:bg-[rgb(30,30,30)] hover:cursor-pointer"
-            >
-              <div className="">
-                <div className="flex flex-row items-center gap-2 text-lg md2:text-xl font-bold">
-                  {title}
-                  <HiExternalLink className="group-hover:bg-[rgba(255,255,255,0.1)] p-2 box-content rounded-full transition-all duration-200" />
-                </div>
-                <div className="flex flex-row justify-between">
-                  <div className="max-w-[512px]">
-                    <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
-                      {description}
-                    </div>
-                    <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
-                      {tools}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
+          {projects.slice(1).map((project, index) => (
+            <ProjectCard key={index} {...project} />
           ))}
         </div>
 

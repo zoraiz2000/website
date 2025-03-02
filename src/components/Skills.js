@@ -6,14 +6,14 @@ const Skills = ({ ref, className }) => {
   const [openSections, setOpenSections] = useState({
     Languages: true,
     Frameworks: false,
-    "Developer Tools": false,
+    "Developer Tools / Technologies": false,
     Databases: false,
   });
 
   const contentRefs = {
     Languages: useRef(null),
     Frameworks: useRef(null),
-    "Developer Tools": useRef(null),
+    "Developer Tools / Technologies": useRef(null),
     Databases: useRef(null),
   };
 
@@ -25,33 +25,37 @@ const Skills = ({ ref, className }) => {
   };
 
   const languages = [
-    { text: "JavaScript", path: "/skills/languages/javascript.png", years: "4+ Years" },
-    { text: "Java", path: "/skills/languages/java.png", years: "4+ Years" },    
-    { text: "HTML", path: "/skills/languages/html.png", years: "4+ Years" },
-    { text: "CSS", path: "/skills/languages/css.png", years: "4+ Years" },
-    { text: "Python", path: "/skills/languages/python.png", years: "3+ Years" },    
-    { text: "PHP", path: "/skills/languages/php.png", years: "2+ Years" },
-    { text: "C", path: "/skills/languages/c.png", years: "2+ Years" },
-    { text: "TypeScript", path: "/skills/languages/typescript.png", years: "1+ Year" },    
+    { text: "JavaScript", path: "/skills/languages/javascript.png", years: "Advanced" },
+    { text: "Java", path: "/skills/languages/java.png", years: "Advanced" },    
+    { text: "HTML", path: "/skills/languages/html.png", years: "Advanced" },
+    { text: "CSS", path: "/skills/languages/css.png", years: "Advanced" },
+    { text: "Python", path: "/skills/languages/python.png", years: "Intermediate" },    
+    { text: "C", path: "/skills/languages/c.png", years: "Intermediate" },
+    { text: "TypeScript", path: "/skills/languages/typescript.png", years: "Intermediate" },    
+    { text: "PHP", path: "/skills/languages/php.png", years: "Beginner" },
     
   ];
 
   const frameworks = [
-    { text: "React", path: "/skills/frameworks/react.png", years: "3+ Years" },
-    { text: "Next", path: "/skills/frameworks/next.png", years: "3+ Years" },
-    { text: "Node", path: "/skills/frameworks/node.png", years: "3+ Years" },
-    { text: ".Net", path: "/skills/frameworks/net.png", years: "1+ Year" },
+    { text: "React", path: "/skills/frameworks/react.png", years: "Advanced" },
+    { text: "Next", path: "/skills/frameworks/next.png", years: "Advanced" },
+    { text: "Node", path: "/skills/frameworks/node.png", years: "Advanced" },
+    { text: "Express", path: "/skills/frameworks/express.png", years: "Intermediate" },
+    { text: ".Net", path: "/skills/frameworks/net.png", years: "Beginner" },
   ];
   
   const tools = [
-    { text: "Git", path: "/skills/tools/git.png", years: "3+ Years" },
-    { text: "Docker", path: "/skills/tools/docker.png", years: "1+ Years" },
-    { text: "Jira", path: "/skills/tools/jira.png", years: "1+ Years" },
+    { text: "Git", path: "/skills/tools/git.png", years: "Advanced" },
+    { text: "REST API", path: "/skills/tools/rest.png", years: "Intermediate" },
+    { text: "AWS", path: "/skills/tools/aws.png", years: "Beginner" },
+    { text: "Docker", path: "/skills/tools/docker.png", years: "Beginner" },
+    { text: "Jira", path: "/skills/tools/jira.png", years: "Beginner" },    
   ];
 
   const databases = [
-    { text: "MySQL", path: "/skills/databases/mysql.png", years: "4+ Years" },
-    { text: "MongoDB", path: "/skills/databases/mongodb.png", years: "3+ Years" },
+    { text: "MySQL", path: "/skills/databases/mysql.png", years: "Advanced" },
+    { text: "MongoDB", path: "/skills/databases/mongodb.png", years: "Advanced" },
+    { text: "PostgreSQL", path: "/skills/databases/postgresql.png", years: "Intermediate" },
   ];
 
   const renderSkillsCategory = (title, skills) => {
@@ -111,7 +115,7 @@ const Skills = ({ ref, className }) => {
       <hr className="my-3 border-stone-50/30 w-[100%]" />
       {renderSkillsCategory("Languages", languages)}
       {renderSkillsCategory("Frameworks", frameworks)}
-      {renderSkillsCategory("Developer Tools", tools)}
+      {renderSkillsCategory("Developer Tools / Technologies", tools)}
       {renderSkillsCategory("Databases", databases)}      
     </div>
   );

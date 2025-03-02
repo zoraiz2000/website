@@ -13,7 +13,7 @@ const Navbar = ({ sectionRefs }) => {
   
   const tooltipItems = [
     { infoText: "About", Icon: FaUser, w:4, h:4, ref: sectionRefs.aboutRef },
-    { infoText: "Resume", Icon: IoDocumentTextSharp, w:5 , h:5,  ref: sectionRefs.resumeRef },
+    { infoText: "Resume", Icon: IoDocumentTextSharp, w:5, h:5,  ref: sectionRefs.resumeRef },
     { infoText: "Skills", Icon: RiToolsFill, w:6, h:6,  ref: sectionRefs.skillsRef },
     { infoText: "Projects", Icon: IoIosFolderOpen, w:5, h:5,  ref: sectionRefs.projectsRef },
     { infoText: "Contact", Icon: IoCall, w:5, h:5,  ref: sectionRefs.contactRef },
