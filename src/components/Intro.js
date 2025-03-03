@@ -5,14 +5,32 @@ import { GiGraduateCap } from "react-icons/gi";
 import { PiMicrosoftOutlookLogoFill } from "react-icons/pi";
 
 const Intro = ({className}) => {
+
+    const socialLinks = [
+        {
+            href: "https://www.linkedin.com/in/zoraizkhan2000/",
+            icon: FaLinkedin,
+        },
+        {
+            href: "https://github.com/zoraiz2000",
+            icon: FaGithub,
+        },
+        {
+            href: "mailto:zoraiz.khan@ucalgary.ca",
+            icon: PiMicrosoftOutlookLogoFill,
+        },
+    ];
+
   return (
-    <div className={`flex flex-col flex-wrap items-center justify-between ${className} border-b border-stone-50/30`}>
+    <div className={`flex flex-col flex-wrap items-center justify-between ${className} p-4 rounded-xl bg-[rgba(8,18,36,0.95)]                     
+                     dark:border dark:border-[rgba(59,130,246,0.1)] min-w-[355px] max-w-[400px]`}>
        
         {/* Image   */}
         <img 
         src="/me.jpg" 
         alt="profile picture" 
-        className="mt-4 rounded-full w-28 h-28 sm:w-44 sm:h-44 transition-transform duration-300 hover:scale-105 relative z-10 object-cover hover:cursor-pointer"
+        className="mt-4 rounded-full w-28 h-28 sm:w-44 sm:h-44 transition-transform duration-300 hover:scale-105 relative z-10 object-cover hover:cursor-pointer
+                   border-2 border-[rgba(59,130,246,0.3)] shadow-md shadow-[rgba(59,130,246,0.1)]"
         />
 
         {/* Name */}
@@ -27,7 +45,9 @@ const Intro = ({className}) => {
 
 
         {/* Education */}
-        <div className="flex flex-col mx-4 px-2 py-2 gap-2 items-center text-white bg-[rgb(255,255,255,0.1)] rounded-md font-poppins">
+        <div className="flex flex-col mx-4 mt-4 px-4 py-3 gap-2 items-center text-white 
+                        bg-[rgba(30,41,59,0.4)] border border-[rgba(59,130,246,0.15)] 
+                        rounded-lg font-poppins s">
             <div className="flex flex-col text-xs gap-1">
                 
                 <div className="flex flex-row text-[.73rem] leading-[1.3rem] justify-between gap-6">
@@ -35,7 +55,7 @@ const Intro = ({className}) => {
                         <div>
                             BSc. Computer Science
                         </div>
-                        <div>
+                        <div className="text-blue-400">
                             Software Engineering
                         </div>
                         <div>
@@ -50,7 +70,7 @@ const Intro = ({className}) => {
                             (Concentration)
                         </div>
                         <div className="flex flex-row items-center gap-1">
-                            <GiGraduateCap className="text-xl text-[rgba(0,0,0,0.6)]" />
+                            <GiGraduateCap className="text-xl text-blue-400" />
                             2024
                         </div>
                     </div>
@@ -58,33 +78,20 @@ const Intro = ({className}) => {
             </div>
         </div>
 
-
-        {/* Greetings */}
-        {/* <div className="my-4 font-poppins text-center text-white-500 text-xs sm:text-xs md:text-md xl:text-[0.8rem]">
-        Explore around!
-        </div> */}
                     
         {/* Socials */}
-        <div className="flex flex-row mx-auto mb-2 mt-4 gap-10">
-        <a
-            href="https://www.linkedin.com/in/zoraizkhan2000/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-        >
-            <FaLinkedin className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
-        </a>
-        <a
-            href="https://github.com/zoraiz2000" 
-            target="_blank" 
-            rel="noopener noreferrer"
-        >
-            <FaGithub className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
-        </a>
-        <a 
-            href="mailto:zoraiz.khan@ucalgary.ca"
-        >
-            <PiMicrosoftOutlookLogoFill className='w-10 h-10 p-2 rounded-md fill-[rgba(255,255,255,0.5)] hover:bg-[rgb(255,255,255,0.1)] hover:fill-white transition-all duration-300 ease-in-out cursor-pointer'/>
-        </a>
+        <div className="flex flex-row mx-auto mb-2 mt-6 gap-5">
+            {socialLinks.map(({ href, icon: Icon }, index) => (
+                <a
+                    key={index}
+                    href={href}
+                    target={href.startsWith("http") ? "_blank" : undefined}
+                    rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="p-1 rounded-lg bg-[rgba(30,41,59,0.6)] hover:bg-[rgba(30,41,59,1)] transition-all duration-300"
+                >
+                    <Icon className="w-8 h-8 p-1.5 fill-[rgba(255,255,255,0.5)] hover:fill-[rgba(255,255,255,1)] transition-all duration-300 ease-in-out cursor-pointer" />
+                </a>
+            ))}
         </div>
     </div>
   )

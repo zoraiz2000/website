@@ -19,13 +19,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
 
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
       >
-       {/* <div className="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
-        <div className="fixed z-50 bottom-0 inset-x-0 h-16 w-full bg-background to-transparent backdrop-blur-lg 
-        [-webkit-mask-image:linear-gradient(to_top,black,transparent)] dark:bg-background pointer-events-none">
+        <div className="fixed top-0 z-[-2] h-screen w-screen bg-neutral-950 
+        bg-[radial-gradient(ellipse_80%_80%_at_50%_20%,rgba(59,130,246,0.3),rgba(22,78,142,0.08))]">
         </div>
         {children}
       </body>

@@ -49,7 +49,9 @@ export default function Home() {
 
       <div className="flex flex-col items-center pt-28 gap-20 justify-center md2:flex-row md2:items-start">
         {/* Intro Section */}
-        <Intro className="top-[10vh] h-full md2:sticky "/>
+        <div className="flex items-center justify-center w-full md2:w-auto">
+          <Intro className="w-full md2:w-auto md2:fixed mx-20 md2:top-28 md2:mr-72"/>
+        </div>
           
         <div className="flex flex-col px-10 max-w-4xl">
 

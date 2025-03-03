@@ -69,7 +69,6 @@ const Skills = ({ ref, className }) => {
         >
           <span>{title}</span>
           <span
-            // className={`bg-none group-hover:bg-[rgba(255,255,255,0.1)] rounded-full px-1 transform transition-all ease-in-out duration-300 ${
             className={`text-4xl group-hover:text-[rgba(255,255,255,2)] rounded-full transform transition-all ease-in-out duration-300 ${
               openSections[title] ? "rotate-0 text-[rgba(255,255,255,1)]" : "-rotate-90 text-[rgba(255,255,255,0.5)]"
             }`}
@@ -89,7 +88,7 @@ const Skills = ({ ref, className }) => {
             {skills.map(({ text, path, years }, index) => (
               <div
                 key={index}
-                className="flex flex-row w-[256px] hover:bg-[rgb(30,30,30)] p-3 rounded-xl transition duration-200 cursor-default"
+                className="flex flex-row w-[256px] hover:bg-[rgb(255,255,255,0.1)] p-3 rounded-xl transition duration-200 cursor-default"
               >
                 <div className="w-7 h-7 md2:w-14 md2:h-14 bg-white rounded-2xl flex items-center justify-center shadow-[0_0_5px_1px_rgba(0,0,0,0.8)]">
                   <img src={path} alt="skill" className="w-4 h-4 md2:w-8 md2:h-8" />

@@ -4,10 +4,10 @@ import { FaChevronDown, FaChevronUp, FaDesktop, FaGithub } from "react-icons/fa"
 
 // Project Card
 const ProjectCard = ({ title, description, tools, link, website }) => (
-  <div className='flex flex-col justify-between max-w-[610px] p-4 rounded-xl hover:bg-[rgb(30,30,30)] hover:cursor-pointer'>
-    <div className="flex flex-row items-center justify-between gap-2 text-lg md2:text-xl font-bold">
+  <div className='flex flex-col justify-between max-w-[610px] p-4 rounded-xl hover:bg-[rgb(255,255,255,0.1)] hover:cursor-pointer'>
+    <div className="flex flex-row items-center justify-between gap-2 text-blue-400 text-lg md2:text-xl font-bold">
       {title}
-      <div className='flex flex-row items-center gap-2'>
+      <div className='flex flex-row items-center gap-2 '>
       {link && (
         <a href={link} target="_blank" rel="noopener noreferrer">
           <HiExternalLink className='text-2xl hover:bg-[rgba(255,255,255,0.1)] p-1.5 box-content rounded-full transition-all duration-200'/>
@@ -23,10 +23,10 @@ const ProjectCard = ({ title, description, tools, link, website }) => (
     </div>
     <div className="flex flex-row justify-between">
       <div className="max-w-[512px]">
-        <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
+        <div className="mt-4 text-xs md2:text-sm text-[rgba(255,255,255,0.8)] font-normal">
           {description}
         </div>
-        <div className="mt-4 text-xs md2:text-sm text-[rgb(150,140,140)] font-normal">
+        <div className="mt-4 text-xs md2:text-sm text-[rgba(255,255,255,0.8)] font-normal">
           {tools}
         </div>
       </div>

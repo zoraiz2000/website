@@ -15,7 +15,7 @@ export default {
         foreground: "var(--foreground)",
       },
       screens: {
-        md2: '1500px'
+        md2: '1600px'
       }
     },
   },
