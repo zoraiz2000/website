@@ -32,9 +32,14 @@ const Contact = ({ ref, className }) => {
     }
 
     emailjs
-      .sendForm('service_fmpcbc5', 'template_m3q3fcs', form.current, {
-        publicKey: 'KsiunZxKW3AljTtGr',
-      })
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PK,
+        }
+      )
       .then(
         () => {
           setStatusMessage('Message successfully sent!');
@@ -46,7 +51,7 @@ const Contact = ({ ref, className }) => {
           setStatusType('error');
           clearMessageAfterDelay();
           console.error('FAILED...', error.text);
-        },
+        }
       );
 
     // Clear the form fields after submission
