@@ -31,3 +31,67 @@ body {
     opacity: 0;
   }
 }
+
+/* Image flip card styles */
+.flip-card {
+  background-color: transparent;
+  width: 11rem;
+  height: 11rem;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .flip-card {
+    width: 11rem;
+    height: 11rem;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Remove the previous flip effect styles that aren't working properly */
+.perspective {
+  perspective: 1000px;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.transform-flip {
+  transform: rotateY(180deg);
+}
+
+/* Original CSS below */

@@ -25,13 +25,27 @@ const Intro = ({className}) => {
     <div className={`flex flex-col flex-wrap items-center justify-between ${className} p-4 rounded-xl bg-[rgba(8,18,36,0.95)]                     
                      dark:border dark:border-[rgba(59,130,246,0.1)] min-w-[355px] max-w-[400px]`}>
        
-        {/* Image   */}
-        <img 
-        src="/me.jpg" 
-        alt="profile picture" 
-        className="mt-4 rounded-full w-28 h-28 sm:w-44 sm:h-44 transition-transform duration-300 hover:scale-105 relative z-10 object-cover hover:cursor-pointer
-                   border-2 border-[rgba(59,130,246,0.3)] shadow-md shadow-[rgba(59,130,246,0.1)]"
-        />
+        {/* Image Flip Container */}
+        <div className="flip-card mt-4 sm:w-44 sm:h-44">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <img 
+                src="/me.jpg" 
+                alt="profile picture" 
+                className="rounded-full w-40 h-40 sm:w-44 sm:h-44 object-cover 
+                         border-2 border-[rgba(59,130,246,0.3)] shadow-md shadow-[rgba(59,130,246,0.1)]"
+              />
+            </div>
+            <div className="flip-card-back">
+              <img 
+                src="/secondary.jpg" 
+                alt="old profile picture" 
+                className="rounded-full w-40 h-40 sm:w-44 sm:h-44 object-cover 
+                         border-2 border-[rgba(59,130,246,0.3)] shadow-md shadow-[rgba(59,130,246,0.1)]"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Name */}
         <div className="flex mt-4 items-center justify-center text-white text-xl md2:text-2xl font-poppins font-extrabold" >
