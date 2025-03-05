@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     // Add Google Analytics script
     const script = document.createElement("script");
-    script.src = `https://www.googletagmanager.com/gtag/js?id=G-ZY6Q8EZXPZ`; 
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`; 
     script.async = true;
     document.head.appendChild(script);
 
@@ -32,7 +32,7 @@ export default function Home() {
       window.dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    gtag("config", "G-ZY6Q8EZXPZ"); 
+    gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID); 
   }, []);
 
   return (
