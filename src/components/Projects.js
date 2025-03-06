@@ -120,7 +120,7 @@ const Projects = ({ ref, className }) => {
         <span className="block text-blue-500 font-extrabold">Projects</span>
         <hr className="my-3 border-stone-50/30 w-[100%]" />
 
-        {projects.slice(0, 1).map((project, index) => (
+        {projects.slice(0, 2).map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
 
@@ -131,7 +131,7 @@ const Projects = ({ ref, className }) => {
           }}
           className="overflow-hidden transition-[max-height] duration-1000 ease-in-out"
         >
-          {projects.slice(1).map((project, index) => (
+          {projects.slice(2).map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
         </div>
