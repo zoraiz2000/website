@@ -41,6 +41,14 @@ const Projects = ({ ref, className }) => {
 
   const projects = [
     {
+      title: "Redis-lite",
+      description: `Implemented a Redis-like in-memory key–value store in Java as a multi-threaded TCP server, supporting concurrent clients.
+                    Built core Redis commands (SET, GET, DEL, EXPIRE, TTL) with correct TTL semantics and expiration handling, and optimized
+                    thread-safe request processing for low-latency operations.`,
+      tools: "Java • TCP Sockets • Multithreading",
+      link: "https://github.com/zoraiz2000/redis-lite-java",
+    },
+    {
       title: "GPTStir",
       description: `An AI chatbot platform that allows users to interact with multiple AI models, including OpenAI, Anthropic, xAI, and DeepSeek. 
                     Features OAuth 2.0 authentication for secure sign-in and enables seamless model switching for each query.`,
