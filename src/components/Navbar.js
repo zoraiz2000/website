@@ -57,7 +57,7 @@ export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name
         <div className="nav__actions">
           <button
             type="button"
-            className="nav__icon-btn"
+            className="nav__icon-btn nav__theme-btn"
             onClick={onToggleTheme}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
           >
