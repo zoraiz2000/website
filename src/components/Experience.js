@@ -24,6 +24,35 @@ function Chevron({ open }) {
   )
 }
 
+function CompanyLogo({ job }) {
+  const [failed, setFailed] = useState(false)
+  const initials = job.company
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase()
+
+  if (!job.logo || failed) {
+    return (
+      <div className="exp-card__logo exp-card__logo--fallback" aria-hidden="true">
+        <span>{initials}</span>
+      </div>
+    )
+  }
+
+  return (
+    <div className="exp-card__logo">
+      <img
+        src={job.logo}
+        alt=""
+        onError={() => setFailed(true)}
+      />
+    </div>
+  )
+}
+
 function ExperienceCard({ job }) {
   const [open, setOpen] = useState(false)
   const panelId = useId()
@@ -31,14 +60,13 @@ function ExperienceCard({ job }) {
   return (
     <article className={`exp-card ${open ? 'is-open' : ''}`}>
       <div className="exp-card__top">
-        <h3 className="exp-card__heading">
-          <span className="exp-card__title">{job.title}</span>
-          <span className="exp-card__sep" aria-hidden="true">
-            {' '}
-            ›{' '}
-          </span>
-          <span className="exp-card__company">{job.company}</span>
-        </h3>
+        <div className="exp-card__identity">
+          <CompanyLogo job={job} />
+          <div className="exp-card__who">
+            <p className="exp-card__company">{job.company}</p>
+            <h3 className="exp-card__title">{job.title}</h3>
+          </div>
+        </div>
         <div className="exp-card__meta">
           <span>{job.dates}</span>
           <span>{job.location}</span>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
 import { IconClose, IconMenu, IconMoon, IconSun } from './Icons'
 
 const links = [
@@ -12,6 +12,8 @@ const links = [
 
 export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name }) {
   const [open, setOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const lastY = useRef(0)
   const menuId = useId()
 
   useEffect(() => {
@@ -29,10 +31,40 @@ export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  useEffect(() => {
+    lastY.current = window.scrollY
+
+    const onScroll = () => {
+      if (open) {
+        setHidden(false)
+        lastY.current = window.scrollY
+        return
+      }
+
+      const y = window.scrollY
+      const delta = y - lastY.current
+
+      if (y < 24) {
+        setHidden(false)
+      } else if (delta > 6) {
+        setHidden(true)
+      } else if (delta < -6) {
+        setHidden(false)
+      }
+
+      lastY.current = y
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [open])
+
   const close = () => setOpen(false)
 
   return (
-    <header className={`nav ${open ? 'nav--open' : ''}`}>
+    <header
+      className={`nav ${open ? 'nav--open' : ''} ${hidden && !open ? 'nav--hidden' : ''}`}
+    >
       <div className="nav__inner container">
         <a className="nav__brand" href="#about" onClick={close}>
           <span className="nav__mark" aria-hidden="true">

@@ -73,6 +73,7 @@ export const experience = [
     id: 'exp-1',
     title: 'Data Analyst',
     company: 'TELUS Digital AI Data Solutions',
+    logo: '/companies/telus.svg',
     dates: 'June 2026 – Present',
     location: 'Calgary, AB',
     summary:
@@ -88,6 +89,7 @@ export const experience = [
     id: 'exp-2',
     title: 'Data Engineer',
     company: 'Ramis Associates',
+    logo: '/companies/ramis.svg',
     dates: 'May 2026 – Present',
     location: 'Calgary, AB',
     summary:
@@ -106,6 +108,7 @@ export const experience = [
     id: 'exp-3',
     title: 'Software Developer',
     company: 'Dimension Rex (MTA:SA)',
+    logo: '/companies/dimension-rex.svg',
     dates: 'Mar 2025 – Jan 2026',
     location: 'Calgary, AB',
     summary:
@@ -124,6 +127,7 @@ export const experience = [
     id: 'exp-4',
     title: 'Backend Developer and Undergraduate Researcher',
     company: 'University of Calgary',
+    logo: '/companies/ucalgary.svg',
     dates: 'Jan 2024 – Apr 2024',
     location: 'Calgary, AB',
     summary:
@@ -141,6 +145,7 @@ export const experience = [
     id: 'exp-5',
     title: 'Undergraduate Researcher (Team Lead)',
     company: 'University of Calgary',
+    logo: '/companies/ucalgary.svg',
     dates: 'Jan 2023 – Apr 2023',
     location: 'Calgary, AB',
     summary:
