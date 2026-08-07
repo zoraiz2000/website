@@ -1,59 +1,118 @@
-"use client"
-import React from "react";
-import PropTypes from "prop-types";
-import { FaUser } from "react-icons/fa";
-import { IoDocumentTextSharp } from "react-icons/io5";
-import { RiToolsFill } from "react-icons/ri";
-import { IoIosFolderOpen } from "react-icons/io";
-import { IoCall } from "react-icons/io5";
-import { Tooltip } from "./Tooltip";
+'use client'
 
+import { useEffect, useId, useState } from 'react'
+import { IconClose, IconMenu, IconMoon, IconSun } from './Icons'
 
-const Navbar = ({ sectionRefs }) => {
-  
-  const tooltipItems = [
-    { infoText: "About", Icon: FaUser, w:1.2, h:1.2, ref: sectionRefs.aboutRef },
-    { infoText: "Resume", Icon: IoDocumentTextSharp, w:1.4, h:1.4,  ref: sectionRefs.resumeRef },
-    { infoText: "Skills", Icon: RiToolsFill, w:1.5, h:1.5,  ref: sectionRefs.skillsRef },
-    { infoText: "Projects", Icon: IoIosFolderOpen, w:1.35, h:1.35,  ref: sectionRefs.projectsRef },
-    { infoText: "Contact", Icon: IoCall, w:1.2, h:1.2,  ref: sectionRefs.contactRef },
-  ];
+const links = [
+  { id: 'about', label: 'About' },
+  { id: 'experience', label: 'Work Experience' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+]
 
-  const handleScroll = (ref) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
+export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name }) {
+  const [open, setOpen] = useState(false)
+  const menuId = useId()
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
     }
-  };
+  }, [open])
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  const close = () => setOpen(false)
 
   return (
-    <nav
-      className="fixed left-0 right-0 mt-5 p-3 z-20 rounded-full mx-auto max-w-xs bg-[rgba(8,18,36,0.95)]
-      dark:border dark:border-[rgba(59,130,246,0.3)] dark:shadow-[0_-20px_40px_-20px_rgba(59,130,246,0.1)_inset] backdrop-blur-sm"
-    >
-      <div className="flex flex-row justify-center items-center gap-x-9">
-          {tooltipItems.map(({ infoText, Icon, ref, w, h }, index) => (
-            <Tooltip key={index} infoText={infoText}>
-              <button onClick={() => handleScroll(ref)}>
-                <Icon 
-                  style={{ width: `${w}rem`, height: `${h}rem` }}
-                  className={`fill-[rgba(255,255,255,0.5)] hover:fill-white hover:mx-2 transition-all duration-300 ease-in-out cursor-pointer`}
-                />
-              </button>
-            </Tooltip>
-          ))}   
+    <header className={`nav ${open ? 'nav--open' : ''}`}>
+      <div className="nav__inner container">
+        <a className="nav__brand" href="#about" onClick={close}>
+          <span className="nav__mark" aria-hidden="true">
+            {(name || 'Z').slice(0, 1)}
+          </span>
+          <span>{name || 'Zoraiz'}</span>
+        </a>
+
+        <nav className="nav__links" aria-label="Primary">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={activeId === link.id ? 'is-active' : undefined}
+              aria-current={activeId === link.id ? 'true' : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="nav__actions">
+          <button
+            type="button"
+            className="nav__icon-btn"
+            onClick={onToggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme === 'dark' ? <IconSun /> : <IconMoon />}
+          </button>
+          <a
+            className="btn btn-primary btn-nav nav__resume"
+            href={resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Resume
+          </a>
+          <button
+            type="button"
+            className="nav__icon-btn nav__menu-btn"
+            aria-expanded={open}
+            aria-controls={menuId}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <IconClose /> : <IconMenu />}
+          </button>
+        </div>
       </div>
-    </nav>
-  );
-};
 
-Navbar.propTypes = {
-  sectionRefs: PropTypes.shape({
-    aboutRef: PropTypes.object.isRequired,
-    resumeRef: PropTypes.object.isRequired,
-    skillsRef: PropTypes.object.isRequired,
-    projectsRef: PropTypes.object.isRequired,
-    contactRef: PropTypes.object.isRequired,
-  }).isRequired,
-};
-
-export default Navbar;
+      <div id={menuId} className={`nav__drawer ${open ? 'is-open' : ''}`} hidden={!open}>
+        <nav className="nav__drawer-links" aria-label="Mobile">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={activeId === link.id ? 'is-active' : undefined}
+              onClick={close}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        <div className="nav__drawer-actions">
+          <button type="button" className="btn btn-ghost" onClick={onToggleTheme}>
+            {theme === 'dark' ? <IconSun /> : <IconMoon />}
+            {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          </button>
+          <a
+            className="btn btn-primary"
+            href={resumeUrl}
+            target="_blank"
+            rel="noreferrer"
+            onClick={close}
+          >
+            View Resume
+          </a>
+        </div>
+      </div>
+    </header>
+  )
+}
