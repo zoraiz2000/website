@@ -36,6 +36,7 @@ export const profile = {
         { name: 'React.js', icon: 'react' },
         { name: 'Next.js', icon: 'nextjs' },
         { name: 'Node.js', icon: 'nodejs' },
+        { name: 'FastAPI', icon: 'fastapi' },
         { name: '.NET', icon: 'dotnet' },
       ],
     },
@@ -45,6 +46,7 @@ export const profile = {
         { name: 'MySQL', icon: 'mysql' },
         { name: 'PostgreSQL', icon: 'postgresql' },
         { name: 'MongoDB', icon: 'mongodb' },
+        { name: 'DuckDB', icon: 'duckdb' },
       ],
     },
     {
@@ -54,6 +56,7 @@ export const profile = {
         { name: 'Microsoft Fabric', icon: 'fabric' },
         { name: 'Azure Data Factory', icon: 'azure' },
         { name: 'Azure Data Lake', icon: 'datalake' },
+        { name: 'Polars', icon: 'polars' },
         { name: 'Docker', icon: 'docker' },
         { name: 'Linux', icon: 'linux' },
         { name: 'Nginx', icon: 'nginx' },
@@ -161,6 +164,18 @@ export const experience = [
 
 export const projects = [
   {
+    id: 'proj-datalens',
+    name: 'DataLens',
+    description:
+      'An AI-powered data quality and exploration platform — upload a CSV for Polars profiling and quality scoring, explore charts, then ask an LLM for insights and natural-language SQL on embedded DuckDB.',
+    tech: ['Python', 'DuckDB', 'FastAPI', 'Polars', 'Docker'],
+    github: 'https://github.com/zoraiz2000/datalens',
+    demo: null,
+    size: 'wide',
+    accent: 'teal',
+    preview: 'dashboard',
+  },
+  {
     id: 'proj-0',
     name: 'Bare-Metal SNES Controller',
     description:
@@ -168,7 +183,7 @@ export const projects = [
     tech: ['ARM', 'Raspberry Pi', 'GPIO', 'Bare-Metal', 'C'],
     github: 'https://github.com/zoraiz2000/baremetal-snes-controller-arm',
     demo: null,
-    size: 'wide',
+    size: 'medium',
     accent: 'slate',
     preview: 'snes',
   },
@@ -181,7 +196,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/redis-lite-java',
     demo: null,
     size: 'medium',
-    accent: 'teal',
+    accent: 'coral',
     preview: 'api',
   },
   {
@@ -189,11 +204,11 @@ export const projects = [
     name: 'GPTStir',
     description:
       'An AI chatbot platform for OpenAI, Anthropic, xAI, and DeepSeek — with OAuth 2.0 sign-in and seamless per-query model switching.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'OAuth 2.0'],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'OAuth 2.0', 'OpenAI API', 'Anthropic API', 'xAI API', 'DeepSeek API'],
     github: 'https://github.com/zoraiz2000/gptstir-frontend',
     demo: 'https://gptstir.com',
     size: 'medium',
-    accent: 'coral',
+    accent: 'indigo',
     preview: 'dashboard',
   },
   {
@@ -205,7 +220,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/rycho',
     demo: null,
     size: 'medium',
-    accent: 'indigo',
+    accent: 'amber',
     preview: 'marketplace',
   },
   {
@@ -217,7 +232,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/Volumetric-live-streaming-video',
     demo: null,
     size: 'medium',
-    accent: 'amber',
+    accent: 'slate',
     preview: 'charts',
   },
   {
@@ -229,7 +244,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/Multithreaded-Games',
     demo: null,
     size: 'medium',
-    accent: 'slate',
+    accent: 'coral',
     preview: 'planner',
   },
   {
@@ -241,7 +256,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/Course-Feedback-Analysis',
     demo: null,
     size: 'medium',
-    accent: 'teal',
+    accent: 'indigo',
     preview: 'dashboard',
   },
 ]
