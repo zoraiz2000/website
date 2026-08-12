@@ -164,16 +164,52 @@ export const experience = [
 
 export const projects = [
   {
+    id: 'proj-2',
+    name: 'AI Benchmarking',
+    description:
+      'A head-to-head AI evaluation arena — pick two models, run them on coding or natural-language tasks, and let a third model judge. Coding runs are scored by sandboxed tests; NL prompts use a blind rubric with latency, tokens, and estimated cost.',
+    tech: [
+      'React',
+      'Vite',
+      'Node.js',
+      'Express',
+      'Google OAuth',
+      'OpenAI API',
+      'Anthropic API',
+      'Gemini API',
+    ],
+    github: 'https://github.com/zoraiz2000/AI-benchmarking-frontend',
+    youtube: 'https://www.youtube.com/watch?v=Y0CmobyivFU',
+    demo: null,
+    size: 'wide',
+    accent: 'indigo',
+    preview: 'dashboard',
+  },
+  {
     id: 'proj-datalens',
     name: 'DataLens',
     description:
       'An AI-powered data quality and exploration platform — upload a CSV for Polars profiling and quality scoring, explore charts, then ask an LLM for insights and natural-language SQL on embedded DuckDB.',
     tech: ['Python', 'DuckDB', 'FastAPI', 'Polars', 'Docker'],
     github: 'https://github.com/zoraiz2000/datalens',
+    youtube: 'https://www.youtube.com/watch?v=5DwsZwmWHIo',
     demo: null,
-    size: 'wide',
+    size: 'medium',
     accent: 'teal',
     preview: 'dashboard',
+  },
+  {
+    id: 'proj-3',
+    name: 'Rycho',
+    description:
+      'A music-focused social app for sharing Spotify tracks, discovering music, and connecting through comments, reactions, and recommendations.',
+    tech: ['React', 'Next.js', 'MongoDB', 'Spotify API'],
+    github: 'https://github.com/zoraiz2000/rycho',
+    youtube: 'https://www.youtube.com/watch?v=dnIq0Uq3S08',
+    demo: null,
+    size: 'medium',
+    accent: 'amber',
+    preview: 'marketplace',
   },
   {
     id: 'proj-0',
@@ -198,30 +234,6 @@ export const projects = [
     size: 'medium',
     accent: 'coral',
     preview: 'api',
-  },
-  {
-    id: 'proj-2',
-    name: 'GPTStir',
-    description:
-      'An AI chatbot platform for OpenAI, Anthropic, xAI, and DeepSeek — with OAuth 2.0 sign-in and seamless per-query model switching.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'OAuth 2.0', 'OpenAI API', 'Anthropic API', 'xAI API', 'DeepSeek API'],
-    github: 'https://github.com/zoraiz2000/gptstir-frontend',
-    demo: 'https://gptstir.com',
-    size: 'medium',
-    accent: 'indigo',
-    preview: 'dashboard',
-  },
-  {
-    id: 'proj-3',
-    name: 'Rycho',
-    description:
-      'A music-focused social app for sharing Spotify tracks, discovering music, and connecting through comments, reactions, and recommendations.',
-    tech: ['React', 'Next.js', 'MongoDB', 'Spotify API'],
-    github: 'https://github.com/zoraiz2000/rycho',
-    demo: null,
-    size: 'medium',
-    accent: 'amber',
-    preview: 'marketplace',
   },
   {
     id: 'proj-4',

@@ -1,7 +1,7 @@
 'use client'
 
 import { useReveal } from '@/hooks/useReveal'
-import { IconExternal, IconGithub } from './Icons'
+import { IconExternal, IconGithub, IconYoutube } from './Icons'
 
 function ProjectPreview({ type }) {
   if (type === 'dashboard') {
@@ -142,15 +142,30 @@ export default function Projects({ items }) {
                 </div>
                 <div className="project-card__links">
                   <a
+                    className="project-card__link project-card__link--github"
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${project.name} on GitHub`}
                   >
-                    <IconGithub />
+                    <IconGithub size={18} />
+                    <span>GitHub</span>
                   </a>
+                  {project.youtube ? (
+                    <a
+                      className="project-card__link project-card__link--youtube"
+                      href={project.youtube}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.name} on YouTube`}
+                    >
+                      <IconYoutube size={18} />
+                      <span>YouTube</span>
+                    </a>
+                  ) : null}
                   {project.demo ? (
                     <a
+                      className="project-card__link"
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
