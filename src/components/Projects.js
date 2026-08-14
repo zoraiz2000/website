@@ -131,49 +131,51 @@ export default function Projects({ items }) {
               className={`project-card project-card--${project.size} project-card--${project.accent}`}
             >
               <div className="project-card__top">
-                <div className="project-card__copy">
+                <div className="project-card__header">
                   <h3>{project.name}</h3>
+                  <div className="project-card__links">
+                    <a
+                      className="project-card__link project-card__link--github"
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`${project.name} on GitHub`}
+                    >
+                      <IconGithub size={18} />
+                      <span>GitHub</span>
+                    </a>
+                    {project.youtube ? (
+                      <a
+                        className="project-card__link project-card__link--youtube"
+                        href={project.youtube}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.name} on YouTube`}
+                      >
+                        <IconYoutube size={18} />
+                        <span>YouTube</span>
+                      </a>
+                    ) : null}
+                    {project.demo ? (
+                      <a
+                        className="project-card__link"
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.name} live demo`}
+                      >
+                        <IconExternal />
+                      </a>
+                    ) : null}
+                  </div>
+                </div>
+                <div className="project-card__copy">
                   <p>{project.description}</p>
                   <ul className="project-card__tech">
                     {project.tech.map((t) => (
                       <li key={t}>{t}</li>
                     ))}
                   </ul>
-                </div>
-                <div className="project-card__links">
-                  <a
-                    className="project-card__link project-card__link--github"
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${project.name} on GitHub`}
-                  >
-                    <IconGithub size={18} />
-                    <span>GitHub</span>
-                  </a>
-                  {project.youtube ? (
-                    <a
-                      className="project-card__link project-card__link--youtube"
-                      href={project.youtube}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${project.name} on YouTube`}
-                    >
-                      <IconYoutube size={18} />
-                      <span>YouTube</span>
-                    </a>
-                  ) : null}
-                  {project.demo ? (
-                    <a
-                      className="project-card__link"
-                      href={project.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${project.name} live demo`}
-                    >
-                      <IconExternal />
-                    </a>
-                  ) : null}
                 </div>
               </div>
               <div className="project-card__media">
