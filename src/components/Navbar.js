@@ -17,9 +17,21 @@ export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name
   const menuId = useId()
 
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
+    const { style } = document.body
+    const prevOverflow = style.overflow
+    const prevTouchAction = style.touchAction
+
+    if (open) {
+      style.overflow = 'hidden'
+      style.touchAction = 'none'
+    } else {
+      style.overflow = ''
+      style.touchAction = ''
+    }
+
     return () => {
-      document.body.style.overflow = ''
+      style.overflow = prevOverflow
+      style.touchAction = prevTouchAction
     }
   }, [open])
 
@@ -62,9 +74,11 @@ export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name
   const close = () => setOpen(false)
 
   return (
-    <header
-      className={`nav ${open ? 'nav--open' : ''} ${hidden && !open ? 'nav--hidden' : ''}`}
-    >
+    <>
+      {open ? <div className="nav-spacer" aria-hidden="true" /> : null}
+      <header
+        className={`nav ${open ? 'nav--open' : ''} ${hidden && !open ? 'nav--hidden' : ''}`}
+      >
       <div className="nav__inner container">
         <a className="nav__brand" href="#about" onClick={close}>
           <span className="nav__mark" aria-hidden="true">
@@ -145,6 +159,7 @@ export default function Navbar({ activeId, theme, onToggleTheme, resumeUrl, name
           </a>
         </div>
       </div>
-    </header>
+      </header>
+    </>
   )
 }
