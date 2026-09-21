@@ -164,18 +164,6 @@ export const experience = [
 
 export const projects = [
   {
-    id: 'proj-construction',
-    name: 'Construction Time Prediction',
-    description:
-      'Predicts home construction cycle time in calendar days from start-of-build features only. Audited and cleaned builder history, trained CatBoost against plan and global baselines (MAE 33.2 days), and scored 578 new homes.',
-    tech: ['Python', 'CatBoost', 'Pandas', 'scikit-learn', 'Jupyter'],
-    github: 'https://github.com/zoraiz2000/construction-time-prediction',
-    demo: null,
-    size: 'wide',
-    accent: 'coral',
-    preview: 'charts',
-  },
-  {
     id: 'proj-2',
     name: 'AI Benchmarking',
     description:
@@ -193,7 +181,7 @@ export const projects = [
     github: 'https://github.com/zoraiz2000/AI-benchmarking-frontend',
     youtube: 'https://www.youtube.com/watch?v=Y0CmobyivFU',
     demo: null,
-    size: 'wide',
+    size: 'medium',
     accent: 'indigo',
     preview: 'dashboard',
   },
@@ -209,6 +197,18 @@ export const projects = [
     size: 'medium',
     accent: 'teal',
     preview: 'dashboard',
+  },
+  {
+    id: 'proj-construction',
+    name: 'Construction Time Prediction',
+    description:
+      'Predicts home construction cycle time in calendar days from start-of-build features only. Audited and cleaned builder history, trained CatBoost against plan and global baselines (MAE 33.2 days), and scored 578 new homes.',
+    tech: ['Python', 'CatBoost', 'Pandas', 'scikit-learn', 'Jupyter'],
+    github: 'https://github.com/zoraiz2000/construction-time-prediction',
+    demo: null,
+    size: 'medium',
+    accent: 'coral',
+    preview: 'charts',
   },
   {
     id: 'proj-3',
