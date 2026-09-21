@@ -1,5 +1,7 @@
 'use client'
 
+import { useState } from 'react'
+import { projectFilters } from '@/data/portfolio'
 import { useReveal } from '@/hooks/useReveal'
 import { IconExternal, IconGithub, IconYoutube } from './Icons'
 
@@ -110,6 +112,12 @@ function ProjectPreview({ type }) {
 
 export default function Projects({ items }) {
   const { ref, visible } = useReveal()
+  const [filter, setFilter] = useState('all')
+
+  const filtered =
+    filter === 'all'
+      ? items
+      : items.filter((project) => project.categories?.includes(filter))
 
   return (
     <section className="section projects" id="projects" aria-labelledby="projects-title">
@@ -124,8 +132,26 @@ export default function Projects({ items }) {
           </p>
         </div>
 
+        <div className="project-filters" role="tablist" aria-label="Filter projects by category">
+          {projectFilters.map((option) => {
+            const active = filter === option.id
+            return (
+              <button
+                key={option.id}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                className={`project-filters__btn${active ? ' is-active' : ''}`}
+                onClick={() => setFilter(option.id)}
+              >
+                {option.label}
+              </button>
+            )
+          })}
+        </div>
+
         <div className="project-grid">
-          {items.map((project) => (
+          {filtered.map((project) => (
             <article
               key={project.id}
               className={`project-card project-card--${project.size} project-card--${project.accent}`}
@@ -184,6 +210,10 @@ export default function Projects({ items }) {
             </article>
           ))}
         </div>
+
+        {filtered.length === 0 ? (
+          <p className="project-filters__empty">No projects in this category yet.</p>
+        ) : null}
       </div>
     </section>
   )

@@ -162,6 +162,13 @@ export const experience = [
   },
 ]
 
+export const projectFilters = [
+  { id: 'all', label: 'All' },
+  { id: 'full-stack', label: 'Full Stack' },
+  { id: 'ai-data', label: 'AI & Data' },
+  { id: 'systems', label: 'Systems' },
+]
+
 export const projects = [
   {
     id: 'proj-2',
@@ -178,6 +185,7 @@ export const projects = [
       'Anthropic API',
       'Gemini API',
     ],
+    categories: ['full-stack', 'ai-data'],
     github: 'https://github.com/zoraiz2000/AI-benchmarking-frontend',
     youtube: 'https://www.youtube.com/watch?v=Y0CmobyivFU',
     demo: null,
@@ -191,6 +199,7 @@ export const projects = [
     description:
       'An AI-powered data quality and exploration platform — upload a CSV for Polars profiling and quality scoring, explore charts, then ask an LLM for insights and natural-language SQL on embedded DuckDB.',
     tech: ['Python', 'DuckDB', 'FastAPI', 'Polars', 'Docker'],
+    categories: ['full-stack', 'ai-data'],
     github: 'https://github.com/zoraiz2000/datalens',
     youtube: 'https://www.youtube.com/watch?v=5DwsZwmWHIo',
     demo: null,
@@ -204,6 +213,7 @@ export const projects = [
     description:
       'Predicts home construction cycle time in calendar days from start-of-build features only. Audited and cleaned builder history, trained CatBoost against plan and global baselines (MAE 33.2 days), and scored 578 new homes.',
     tech: ['Python', 'CatBoost', 'Pandas', 'scikit-learn', 'Jupyter'],
+    categories: ['ai-data'],
     github: 'https://github.com/zoraiz2000/construction-time-prediction',
     demo: null,
     size: 'medium',
@@ -216,6 +226,7 @@ export const projects = [
     description:
       'A music-focused social app for sharing Spotify tracks, discovering music, and connecting through comments, reactions, and recommendations.',
     tech: ['React', 'Next.js', 'MongoDB', 'Spotify API'],
+    categories: ['full-stack'],
     github: 'https://github.com/zoraiz2000/rycho',
     youtube: 'https://www.youtube.com/watch?v=dnIq0Uq3S08',
     demo: null,
@@ -229,6 +240,7 @@ export const projects = [
     description:
       'A bare-metal ARM/Raspberry Pi interface that reads SNES controller input via memory-mapped GPIO — latch, clock, and bit-level sampling with no OS or drivers.',
     tech: ['ARM', 'Raspberry Pi', 'GPIO', 'Bare-Metal', 'C'],
+    categories: ['systems'],
     github: 'https://github.com/zoraiz2000/baremetal-snes-controller-arm',
     demo: null,
     size: 'medium',
@@ -241,6 +253,7 @@ export const projects = [
     description:
       'A Redis-like in-memory key–value store in Java as a multi-threaded TCP server, with SET/GET/DEL/EXPIRE/TTL and low-latency concurrent clients.',
     tech: ['Java', 'TCP Sockets', 'Multithreading'],
+    categories: ['systems'],
     github: 'https://github.com/zoraiz2000/redis-lite-java',
     demo: null,
     size: 'medium',
@@ -253,6 +266,7 @@ export const projects = [
     description:
       'Optimized a volumetric live-streaming video system with Docker and modular Node.js design; findings captured in a research paper.',
     tech: ['Node.js', 'Docker', 'Express'],
+    categories: ['systems'],
     github: 'https://github.com/zoraiz2000/Volumetric-live-streaming-video',
     demo: null,
     size: 'medium',
@@ -265,6 +279,7 @@ export const projects = [
     description:
       'Games built in C that demonstrate thread creation, synchronization, and shared resource management for reliable real-time processes.',
     tech: ['C', 'Multithreading'],
+    categories: ['systems'],
     github: 'https://github.com/zoraiz2000/Multithreaded-Games',
     demo: null,
     size: 'medium',
@@ -277,6 +292,7 @@ export const projects = [
     description:
       'A machine learning system in Python that analyzes student feedback with decision trees and information gain to recommend courses.',
     tech: ['Python', 'Pandas', 'Machine Learning'],
+    categories: ['ai-data'],
     github: 'https://github.com/zoraiz2000/Course-Feedback-Analysis',
     demo: null,
     size: 'medium',
